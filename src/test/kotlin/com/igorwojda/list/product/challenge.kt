@@ -3,9 +3,7 @@ package com.igorwojda.list.product
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun product(list: List<Int>): Int {
-    TODO("not implemented")
-}
+private fun product(list: List<Int>) = list.reduce { x, y -> x * y }
 
 private class Test {
     @Test

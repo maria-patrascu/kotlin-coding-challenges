@@ -3,9 +3,9 @@ package com.igorwojda.string.longestword
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun longestWord(str: String): String {
-    TODO("not implemented")
-}
+private fun longestWord(str: String) =
+     str.split(" ")
+        .reduce { firstWord, secondWord -> if (firstWord.length > secondWord.length) firstWord else secondWord }
 
 private class Test {
     @Test
