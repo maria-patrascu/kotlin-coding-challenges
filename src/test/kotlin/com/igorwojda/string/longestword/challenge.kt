@@ -4,8 +4,9 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun longestWord(str: String) =
-     str.split(" ")
-        .reduce { firstWord, secondWord -> if (firstWord.length > secondWord.length) firstWord else secondWord }
+     str.replace(Regex("[^a-zA-Z0-9 ]"), " ")
+        .split(" ")
+        .reduce { firstWord, secondWord -> if (firstWord.length >= secondWord.length) firstWord else secondWord }
 
 private class Test {
     @Test
