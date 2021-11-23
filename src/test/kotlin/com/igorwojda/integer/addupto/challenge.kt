@@ -8,8 +8,7 @@ private fun addUpTo(n: Int): Int {
     var i = 0
 
     do {
-        i++
-        count += i
+        count += ++i
     } while (i < n)
 
     return count
@@ -25,8 +24,7 @@ private fun addDownToItinerate(n: Int): Int {
     var i = n
 
     do {
-        count += i
-        i--
+        count += i--
     } while (i >= 1)
 
     return count
