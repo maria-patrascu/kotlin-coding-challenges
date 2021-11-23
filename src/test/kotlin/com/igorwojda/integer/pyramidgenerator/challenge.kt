@@ -3,8 +3,16 @@ package com.igorwojda.integer.pyramidgenerator
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
+//NOT FINISHED
 fun generatePyramid(n: Int): List<String> {
-    TODO("not implemented")
+    val list = mutableListOf<String>()
+
+    for (i in 1..n) {
+
+        list.add("\n" + "#".repeat((2 * i) - 1))
+    }
+
+    return list
 }
 
 private class Test {

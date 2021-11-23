@@ -3,9 +3,7 @@ package com.igorwojda.integer.reverse
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun reverseInt(i: Int): Int {
-    TODO("not implemented")
-}
+private fun reverseInt(i: Int) = i.toString().reversed().toInt()
 
 private class Test {
     @Test

@@ -3,9 +3,7 @@ package com.igorwojda.string.reverse
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun reverse(str: String): String {
-    TODO("not implemented")
-}
+private fun reverse(str: String) = str.reversed()
 
 private class Test {
     @Test

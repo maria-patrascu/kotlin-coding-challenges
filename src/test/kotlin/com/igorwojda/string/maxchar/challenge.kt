@@ -4,7 +4,9 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun maxOccurrentChar(str: String): Char? {
-    TODO("not implemented")
+    val charsList = str.toMutableList()
+
+    return charsList.groupBy { it }.mapValues { it.value.size }.maxByOrNull { it.value }?.key
 }
 
 private class Test {
