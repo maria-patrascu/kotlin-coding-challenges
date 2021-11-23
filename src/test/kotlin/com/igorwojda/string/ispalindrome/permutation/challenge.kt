@@ -4,7 +4,16 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun isPermutationPalindrome(str: String): Boolean {
-    TODO("not implemented")
+    val strCharacters = mutableSetOf<Char>()
+
+    str.forEach {
+        if (strCharacters.contains(it))
+            strCharacters.remove(it)
+        else
+            strCharacters.add(it)
+    }
+
+    return strCharacters.size <= 1
 }
 
 private class Test {
