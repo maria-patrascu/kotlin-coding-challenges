@@ -8,8 +8,7 @@ private fun factorial(n: Int): Int {
     var total = 1
 
     do {
-        total *= i
-        i++
+        total *= i++
     } while (i in 1..n)
 
     return total
