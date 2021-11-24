@@ -9,7 +9,10 @@ fun generatePyramid(n: Int): List<String> {
 
     for (i in 1..n) {
 
-        list.add("\n" + "#".repeat((2 * i) - 1))
+        val space = " ".repeat(n - i)
+        val item = "#".repeat((2 * i) - 1)
+
+        list.add("$space$item$space")
     }
 
     return list
