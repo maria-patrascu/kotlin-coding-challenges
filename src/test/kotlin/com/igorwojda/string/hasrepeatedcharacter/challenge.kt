@@ -3,9 +3,7 @@ package com.igorwojda.string.hasrepeatedcharacter
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun hasRepeatedChar(str: String): Boolean {
-    TODO("not implemented")
-}
+private fun hasRepeatedChar(str: String) = str.toCharArray().distinct().size != str.toCharArray().size
 
 private class Test {
     @Test

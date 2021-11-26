@@ -2,9 +2,15 @@ package com.igorwojda.string.isanagram
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
+import java.util.*
 
 private fun isAnagram(str1: String, str2: String): Boolean {
-    TODO("not implemented")
+
+    val specialChars = Regex("[^a-zA-Z0-9]")
+    val str1CharsSorted = str1.toLowerCase().replace(specialChars, "").chars().sorted().toArray()
+    val str2CharsSorted = str2.toLowerCase().replace(specialChars, "").chars().sorted().toArray()
+
+    return Arrays.equals(str1CharsSorted, str2CharsSorted)
 }
 
 private class Test {
