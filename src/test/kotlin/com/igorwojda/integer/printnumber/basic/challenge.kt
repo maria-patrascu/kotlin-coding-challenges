@@ -8,16 +8,14 @@ private fun printNumber(n: Int) = if (n == 0) listOf() else (n downTo 1).toList(
 //Extra challenge: clasa de test se numeste RecursivePrintNumber. Cum ai implementa functia asta recursiv?
 
 private fun printNumberRecursive(n: Int): List<Int> {
-    val numbersList = mutableListOf<Int>()
-
     var i = n
 
-    do {
-        if (n != 0)
-            numbersList.add(i--)
-    } while (i >= 1)
+    while (i in 1..n + 1) {
+        i -= 1
+        return listOf(n) + printNumberRecursive(i)
+    }
 
-    return numbersList
+    return listOf()
 }
 
 class RecursivePrintNumber {
