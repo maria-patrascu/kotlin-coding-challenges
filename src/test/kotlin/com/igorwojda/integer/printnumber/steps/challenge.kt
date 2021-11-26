@@ -3,9 +3,7 @@ package com.igorwojda.integer.printnumber.steps
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun printNumber(n: Int, step: Int = 1): List<Int> {
-    TODO("not implemented")
-}
+private fun printNumber(n: Int, step: Int = 1) = if (n == 0) listOf() else (n downTo 1 step step).toList()
 
 class RecursivePrintNumberWithSteps {
     @Test

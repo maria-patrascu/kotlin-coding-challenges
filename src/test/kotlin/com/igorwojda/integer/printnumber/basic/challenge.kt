@@ -3,28 +3,39 @@ package com.igorwojda.integer.printnumber.basic
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun printNumber(n: Int): List<Int> {
-    TODO("not implemented")
+private fun printNumber(n: Int) = if (n == 0) listOf() else (n downTo 1).toList()
+
+//Extra challenge: clasa de test se numeste RecursivePrintNumber. Cum ai implementa functia asta recursiv?
+
+private fun printNumberRecursive(n: Int): List<Int> {
+    var i = n
+
+    while (i in 1..n + 1) {
+        i -= 1
+        return listOf(n) + printNumberRecursive(i)
+    }
+
+    return listOf()
 }
 
 class RecursivePrintNumber {
     @Test
     fun `printNumber 0 return listOf()`() {
-        printNumber(0) shouldBeEqualTo listOf()
+        printNumberRecursive(0) shouldBeEqualTo listOf()
     }
 
     @Test
     fun `printNumber 1 return listOf(1)`() {
-        printNumber(1) shouldBeEqualTo listOf(1)
+        printNumberRecursive(1) shouldBeEqualTo listOf(1)
     }
 
     @Test
     fun `printNumber 3 return listOf(3, 2, 1)`() {
-        printNumber(3) shouldBeEqualTo listOf(3, 2, 1)
+        printNumberRecursive(3) shouldBeEqualTo listOf(3, 2, 1)
     }
 
     @Test
     fun `printNumber 5 return listOf(5, 4, 3, 2, 1)`() {
-        printNumber(5) shouldBeEqualTo listOf(5, 4, 3, 2, 1)
+        printNumberRecursive(5) shouldBeEqualTo listOf(5, 4, 3, 2, 1)
     }
 }
