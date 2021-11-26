@@ -3,16 +3,21 @@ package com.igorwojda.integer.pyramidgenerator
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-//NOT FINISHED
 fun generatePyramid(n: Int): List<String> {
     val list = mutableListOf<String>()
+    val totalChars = (n * 2) - 1
 
     for (i in 1..n) {
 
-        val space = " ".repeat(n - i)
-        val item = "#".repeat((2 * i) - 1)
+        var item = ""
 
-        list.add("$space$item$space")
+        for (char in 1..totalChars) {
+            if (char >= n - (i - 1) && char <= n + (i - 1))
+                item += "#"
+            else
+                item += " "
+        }
+        list.add(item)
     }
 
     return list
