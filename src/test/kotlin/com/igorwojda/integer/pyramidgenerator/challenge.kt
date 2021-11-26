@@ -9,15 +9,13 @@ fun generatePyramid(n: Int): List<String> {
 
     for (i in 1..n) {
 
-        var item = ""
+        val totalHash = (i * 2) - 1
+        val totalSpace = (totalChars - totalHash) / 2
 
-        for (char in 1..totalChars) {
-            if (char >= n - (i - 1) && char <= n + (i - 1))
-                item += "#"
-            else
-                item += " "
-        }
-        list.add(item)
+        val hash = "#".repeat(totalHash)
+        val space = " ".repeat(totalSpace)
+
+        list.add("$space$hash$space")
     }
 
     return list
